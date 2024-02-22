@@ -10,6 +10,10 @@ The project is implemented in Python using the following libraries:
 - Scikit-learn
 - Fuzzywuzzy
 
+## Context
+
+This project serves as an extension to a presentation I delivered on "Recommender Algorithms, Netflix," which was part of a university course focused on pre-professional training. The attached [PDF file](recommendation-algorithms-netflix.pdf) contains the slides from that presentation, which are in French.
+
 ## Screenshots
 ```python
 print(movie_recommender_engine("Jurassic Park", user_item_matrix, cf_model, n_recs))
