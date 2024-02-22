@@ -10,4 +10,8 @@ movie_metadata = pd.read_csv('data/movies_metadata.csv')
 
 # Merge the data
 movie_data = user_ratings_df.merge(movie_metadata, on='movieId')
-print(movie_data.head())
+
+# Create a user-item matrix
+user_item_matrix = user_ratings_df.pivot(index=['userId'], columns=['movieId'], values='rating').fillna(0)
+
+print(user_item_matrix.head())
