@@ -5,4 +5,7 @@ import matplotlib.pyplot as plt
 
 # Load the data
 user_ratings_df = pd.read_csv('data/ratings.csv')
-print(user_ratings_df.head())   # print the first 5 rows of the dataframe
+
+movie_metadata_df = pd.read_csv('data/movies_metadata.csv')
+movie_metadata_df = movie_metadata_df[['title', 'genres']]
+print(movie_metadata_df.head())
