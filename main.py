@@ -15,7 +15,7 @@ movie_data = user_ratings_df.merge(movie_metadata, on="movieId")
 
 # Create a user-item matrix
 user_item_matrix = user_ratings_df.pivot(
-    index=["userId"], columns=["movieId"], values="rating"
+    index=["movieId"], columns=["userId"], values="rating"
 ).fillna(0)
 
 # Create a KNN model
@@ -32,7 +32,7 @@ def movie_recommender_engine(movie_name, matrix, cf_model, n_recs):
     movie_id = process.extractOne(movie_name, movie_metadata["title"])[2]
 
     # Calculate neighbor distances
-    distances, indices = cf_model.kneighbors(matrix[movie_id], n_neighbors=n_recs)
+    distances, indices = cf_knn_model.kneighbors(matrix.loc[movie_id, :].values.reshape(1, -1), n_neighbors=n_recs)
     movie_rec_ids = sorted(
         list(zip(indices.squeeze().tolist(), distances.squeeze().tolist())),
         key=lambda x: x[1],
@@ -49,5 +49,5 @@ def movie_recommender_engine(movie_name, matrix, cf_model, n_recs):
     return df
 
 
-n_recs = 10
-movie_recommender_engine("Batman", user_item_matrix, cf_model, n_recs)
+n_recs = 10 # Number of recommendations (excluding the movie itself)
+print(movie_recommender_engine("Jurassic Park", user_item_matrix, cf_model, n_recs))
