@@ -2,7 +2,7 @@
 ## Description
 The Movie-Recommendation-System is a machine learning project designed to provide personalised movie suggestions to users. It utilises a collaborative filtering approach, leveraging the K-Nearest Neighbors (KNN) algorithm to analyze and predict user preferences based on a dataset of user ratings and movie metadata.
 
-The dataset used for this project is from the GitHub Repository (ml-latest-small)[https://github.com/smanihwr/ml-latest-small] by smanihwr.
+The dataset used for this project is from the GitHub Repository [ml-latest-small](https://github.com/smanihwr/ml-latest-small) by smanihwr.
 
 The project is implemented in Python using the following libraries:
 - Pandas
