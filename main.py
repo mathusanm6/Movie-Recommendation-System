@@ -1,7 +1,6 @@
 import os
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
 from sklearn.neighbors import NearestNeighbors
 from fuzzywuzzy import process
 
@@ -50,4 +49,4 @@ def movie_recommender_engine(movie_name, matrix, cf_model, n_recs):
 
 
 n_recs = 10 # Number of recommendations (excluding the movie itself)
-print(movie_recommender_engine("Jurassic Park", user_item_matrix, cf_model, n_recs))
+print(movie_recommender_engine("Terminator", user_item_matrix, cf_model, n_recs))
